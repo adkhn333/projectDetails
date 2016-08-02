@@ -1,0 +1,9 @@
+<form ng-submit="applyCostFilter(cost)" layout="column" layout-padding>
+	<md-input-container flex layout-align="center center">
+		<input type="number" ng-model="cost.min" ng-init="cost.min = costValue.min" class="md-primary" placeholder="Minimum">
+	</md-input-container>
+	<md-input-container flex layout-align="center center">
+		<input type="number" ng-model="cost.max" ng-init="cost.max = costValue.max" class="md-primary" placeholder="Maximum">
+	</md-input-container>
+	<md-button flex layout-align="center center" type="submit" class="md-raised md-primary">Apply</md-button>
+</form>

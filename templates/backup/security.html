@@ -1,0 +1,127 @@
+<form ng-submit="applySecurityFilter(security)">
+    <md-list layout="column">
+        <md-subheader>Main Gate</md-subheader>
+        <md-list-item>
+            <p>Gaurds</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.mainGate.guards"
+                ng-init="security.mainGate.guards = securityValue.mainGate.guards"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Boom Barriers</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.mainGate.boomBarriers"
+                ng-init="security.mainGate.boomBarriers = securityValue.mainGate.boomBarriers"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Intercom</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.mainGate.intercom"
+                ng-init="security.mainGate.intercom = securityValue.mainGate.intercom"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>CCTV</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.mainGate.cctv"
+                ng-init="security.mainGate.cctv = securityValue.mainGate.cctv"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-subheader>Tower</md-subheader>
+        <md-list-item>
+            <p>Access Controlled</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.tower.accessControlled"
+                ng-init="security.tower.accessControlled = securityValue.tower.accessControlled"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Guards</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.tower.guards"
+                ng-init="security.tower.guards = securityValue.tower.guards"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>CCTV</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.tower.cctv"
+                ng-init="security.tower.cctv = securityValue.tower.cctv"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-subheader></md-subheader>
+        <md-list-item>
+            <p>Tags For Vehicles</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.tagsForVehicles"
+                ng-init="security.tagsForVehicles = securityValue.tagsForVehicles"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Stickers For Vehicles</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.stickersForVehicles"
+                ng-init="security.stickersForVehicles = securityValue.stickersForVehicles"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Number Of Entry Or Exit Points</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.numberOfEntryOrExitPoints"
+                ng-init="security.numberOfEntryOrExitPoints = securityValue.numberOfEntryOrExitPoints"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Video Door Phone</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.videoDoorPhone"
+                ng-init="security.videoDoorPhone = securityValue.videoDoorPhones"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Worker Clearance</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.workerClearance"
+                ng-init="security.workerClearance = securityValue.workerClearance"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Worker Pass</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.workerPass"
+                ng-init="security.workerPass = securityValue.workPass"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-button layout-align="center center" type="submit" class="md-raised md-primary">Apply</md-button>
+    </md-list>
+</form>

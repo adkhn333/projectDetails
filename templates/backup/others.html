@@ -1,0 +1,125 @@
+<form layout="column" layout-padding ng-submit="applyOthersFilter(others)">
+    <md-list>
+      <md-list-item>
+          <p>Power Backup</p>
+          <md-checkbox  
+            ng-false-value="null"
+            ng-model="others.powerBackup" 
+            ng-init="others.powerBackup = othersValue.powerBackup" >
+          </md-checkbox>
+      </md-list-item>
+      <md-list-item>
+          <p>Maintenance</p>
+          <md-checkbox  
+            ng-false-value="null"
+            ng-model="others.maintenance" 
+            ng-init="others.maintenance = othersValue.maintenance">
+          </md-checkbox>
+      </md-list-item>
+      <md-list-item>
+          <p>Waiting Lounge In Tower</p>
+          <md-checkbox 
+            ng-false-value="null"
+            ng-model="others.waitingLoungeInTower" 
+            ng-init="others.waitingLoungeInTower = othersValue.waitingLoungeInTower">
+          </md-checkbox>
+      </md-list-item>
+      <md-list-item>
+          <p>Air Conditioning In Waiting Lounge</p>
+          <md-checkbox  
+            ng-false-value="null"
+            ng-model="others.airConditioningInWaitingLounge" 
+            ng-init="others.airConditioningInWaitingLounge = othersValue.airConditioningInWaitingLounge" >
+          </md-checkbox>
+      </md-list-item>
+      <md-list-item>
+          <p>Pet Friendly</p>
+          <md-checkbox 
+            ng-false-value="null" 
+            ng-model="others.petFriendly" 
+            ng-init="others.petFriendly = othersValue.petFriendly" >
+          </md-checkbox>     
+      </md-list-item>
+      <md-list-item>
+          <p>Wheelchair Friendly</p>
+          <md-checkbox  
+            ng-false-value="null"
+            ng-model="others.wheelChairFriendly" 
+            ng-init="others.wheelChairFriendly = othersValue.wheelChairFriendly">
+          </md-checkbox>    
+      </md-list-item>
+      <md-list-item>
+          <p>Play School</p>
+          <md-checkbox 
+            ng-false-value="null" 
+            ng-model="others.playSchool" 
+            ng-init="others.playSchool = othersValue.playSchool">
+          </md-checkbox>   
+      </md-list-item>
+      <md-list-item>
+          <p>Daycare</p>
+          <md-checkbox 
+            ng-false-value="null" 
+            ng-model="others.daycare" 
+            ng-init="others.daycare = othersValue.daycare">
+          </md-checkbox>
+      </md-list-item>
+      <md-list-item>
+          <p>ATM</p>
+          <md-checkbox 
+            ng-false-value="null" 
+            ng-model="others.atm" 
+            ng-init="others.atm = othersValue.atm">
+          </md-checkbox>
+      </md-list-item>
+      <md-list-item>
+          <p>Grocery</p>
+          <md-checkbox  
+            ng-false-value="null"
+            ng-model="others.grocery" 
+            ng-init="others.grocery = othersValue.grocery">
+          </md-checkbox> 
+      </md-list-item>
+      <md-list-item>
+          <p>Pharmacy</p>
+          <md-checkbox  
+            ng-false-value="null"
+            ng-model="others.pharmacy" 
+            ng-init="others.pharmacy = othersValue.pharmacy">
+          </md-checkbox>
+      </md-list-item>
+      <md-list-item>
+          <p>Parlour</p>
+          <md-checkbox  
+            ng-false-value="null"
+            ng-model="others.parlour" 
+            ng-init="others.parlour = othersValue.parlour">
+          </md-checkbox>
+      </md-list-item>
+      <md-list-item>
+          <p>Park</p>
+          <md-checkbox  
+            ng-false-value="null"
+            ng-model="others.park" 
+            ng-init="others.park = othersValue.park">
+          </md-checkbox>
+      </md-list-item>
+      <md-list-item>
+          <p>Laundry</p>
+          <md-checkbox  
+            ng-false-value="null"
+            ng-model="others.laundry" 
+            ng-init="others.laundry = othersValue.laundry">
+          </md-checkbox>
+      </md-list-item>
+      <md-list-item>
+          <p>Bank</p>
+          <md-checkbox  
+            ng-false-value="null"
+            ng-model="others.bank" 
+            ng-init="others.bank = othersValue.bank">
+          </md-checkbox> 
+      </md-list-item>
+    </md-list>                
+    <md-button  type="submit" class="md-raised md-primary md-block" >Apply</md-button>
+</form>

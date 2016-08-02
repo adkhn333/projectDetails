@@ -1,0 +1,127 @@
+<form ng-submit="applySecurityFilter(security)">
+    <md-list layout="column">
+        <md-subheader>Main Gate</md-subheader>
+        <md-list-item>
+            <p>Gaurds</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.mainGate.guards"
+                ng-init="security.mainGate.guards = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Boom Barriers</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.mainGate.boomBarriers"
+                ng-init="security.mainGate.boomBarriers = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Intercom</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.mainGate.intercom"
+                ng-init="security.mainGate.intercom = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>CCTV</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.mainGate.cctv"
+                ng-init="security.mainGate.cctv = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-subheader>Tower</md-subheader>
+        <md-list-item>
+            <p>Access Controlled</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.tower.accessControlled"
+                ng-init="security.tower.accessControlled = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Guards</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.tower.guards"
+                ng-init="security.tower.guards = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>CCTV</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.tower.cctv"
+                ng-init="security.tower.cctv = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-subheader></md-subheader>
+        <md-list-item>
+            <p>Tags For Vehicles</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.tagsForVehicles"
+                ng-init="security.tagsForVehicles = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Stickers For Vehicles</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.stickersForVehicles"
+                ng-init="security.stickersForVehicles = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Number Of Entry Or Exit Points</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.numberOfEntryOrExitPoints"
+                ng-init="security.numberOfEntryOrExitPoints = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Video Door Phone</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.videoDoorPhone"
+                ng-init="security.videoDoorPhone = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Worker Clearance</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.workerClearance"
+                ng-init="security.workerClearance = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Worker Pass</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="security.workerPass"
+                ng-init="security.workerPass = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-button layout-align="center center" type="submit" class="md-raised md-primary">Apply</md-button>
+    </md-list>
+</form>

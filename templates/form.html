@@ -1,0 +1,808 @@
+<style>
+    .md-subheader {
+        margin-top: 15px;
+        background-color: #4286f9;
+    }
+    .subheader-icon {
+        color: black;
+        float: right;
+        position: absolute;
+        right: -5px;
+        top: -3px;
+    }
+</style>
+<form>
+    <md-toolbar>
+        <h1 class="md-toolbar-tools" layout-align="center center">Project Details</h1>
+    </md-toolbar>
+    <md-content 
+        layout="column" 
+        layout-padding flex="50" 
+        flex-offset="25"
+        style="overflow-x: hidden;">
+        <div layout-align="center center" layout-padding>
+            <md-select ng-model="projectObject.projectId" Placeholder="Select Any Project">
+                <md-option 
+                    ng-click="fillDetails(project[version].projectId)" 
+                    ng-value="project[version].projectId" 
+                    ng-repeat="project in projects">
+                    {{project[version].projectDetails.projectName}}
+                </md-option>
+            </md-select>
+        </div>
+        <section>
+            <md-subheader class="md-no-sticky" ng-click="show(1)">
+                Project Details
+                <md-icon ng-show="showing !=1" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==1" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 1">
+                <md-list-item>
+                    <p>Project Name</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.projectName}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Builder Name</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.builderName}}</span>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(2)" ng-click="toggleShow($event)" >
+                Address
+                <md-icon ng-show="showing !=2" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==2" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 2">
+                <!--<md-list-item ng-repeat="(key,value) in projectObject.projectDetails.address">
+                    <p>{{key | camelCaseToHuman}}</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.address.addressLine1}}</span>
+                </md-list-item>
+                <md-subheader>Without NG_REPEAT Value</md-subheader>-->
+                <md-list-item>
+                    <p>Address Line 1</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.address.addressLine1}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Address Line 2</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.address.addressLine2}}</span>
+                </md-list-item>
+                <md-list-item>  
+                    <p>Landmark</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.address.landmark}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Pincode</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.address.pincode}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>City Name</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.address.cityName}}</span>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(3)" >
+                Locations
+                <md-icon ng-show="showing !=3" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==3" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 3">
+                <md-list-item
+                    ng-repeat="location in projectObject.projectDetails.address.locations">
+                    <p>{{location.locationName}}</p>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(4)" >
+                Partners
+                <md-icon ng-show="showing !=4" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==4" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 4">
+                <md-subheader class="md-no-sticky" >Construction Company</md-subheader>
+                <md-list-item>
+                    <p>Name</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.partners.constructionCompany.name}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Website</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.partners.constructionCompany.website}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >Architect</md-subheader>
+                <md-list-item>
+                    <p>Name</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.partners.architect.name}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Website</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.partners.architect.website}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >Landscape Designer</md-subheader>
+                <md-list-item>
+                    <p>Name</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.partners.landscapeDesigner.name}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Website</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.partners.landscapeDesigner.website}}</span>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(5)"  >
+                Approved Bank Loans
+                <md-icon ng-show="showing !=5" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==5" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 5">
+                <md-list-item ng-repeat="(key, value) in projectObject.projectDetails.approvedBankLoans">
+                    <p>{{key}}</p>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(6)" >
+                Project Type
+                <md-icon ng-show="showing !=6" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==6" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 6">
+                <md-list-item ng-repeat="(key, value) in projectObject.projectDetails.projectType">
+                    <p>{{key | camelCaseToHuman}}</p>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(7)" >
+                Floors
+                <md-icon ng-show="showing !=7" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==7" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 7">
+                <md-list-item>
+                    <p>Max</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.floors.max}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Min</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.floors.min}}</span>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(8)" >
+                Lifts
+                <md-icon ng-show="showing !=8" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==8" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 8">
+                <md-list-item>
+                    <p>Max</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.floors.max}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Min</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.floors.min}}</span>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(9)" >
+                Others
+                <md-icon ng-show="showing !=9" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==9" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 9">
+                <md-list-item>
+                    <p>Total Units</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.totalUnits}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Total Towers</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.totalTowers}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Green Area</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.greenArea}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Land Area</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.landArea}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Car Parking</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.carParking}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Visitor Car Parking</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.visitorCarParking}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Vastu Compliant</p>
+                    <span class="md-secondary">{{projectObject.projectDetails.vastuCompliant}}</span>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(10)" >
+                RWA
+                <md-icon ng-show="showing !=10" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==10" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 10">
+                <md-list-item>
+                    <p>Contact Name</p>
+                    <span class="md-secondary">{{projectObject.rwa.contactName}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Email Address</p>
+                    <span class="md-secondary">{{projectObject.emailAddress}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Contact Number</p>
+                    <span class="md-secondary">{{projectObject.rwa.contactNumber}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Rules</p>
+                    <span class="md-secondary">{{projectObject.rwa.rules}}</span>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(11)" >
+                Sports Activities
+                <md-icon ng-show="showing !=11" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==11" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 11">
+                <md-list-item ng-repeat="(key, value) in projectObject.sportsActivities">
+                    <p>{{key | camelCaseToHuman}}</p>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(12)" >
+                Club House
+                <md-icon ng-show="showing !=12" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==12" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 12">
+                <md-subheader class="md-no-sticky" >Operating Times</md-subheader>
+                <md-list-item>
+                    <p>Start</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.start}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>End</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.end}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Holiday</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.holiday}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >Others</md-subheader>
+                <md-list-item>
+                    <p>Mulit Purpose Hall</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.multiPuposeHall}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Restaurant</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.restaurant}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Yoga Room</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.yogaRoom}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Aerobics Rooms</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.aerobicsRooms}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Dance Room</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.danceRoom}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Music Room</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.musicRoom}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Salon</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.salon}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Spa</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.spa}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Gym</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.gym}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Video Games</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.videoGames}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Mini Theatre</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.miniTheatre}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Kids Zone</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.kidsZone}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Bar</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.bar}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Cafe</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.Cafe}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Business Centre</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.businessCentre}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Guest Rooms</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.guestRooms}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Steam Room</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.steamRoom}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Sauna Room</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.saunaRoom}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Jacuzzi</p>
+                    <span class="md-secondary">{{projectObject.clubHouse.jacuzzi}}</span>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(13)" >
+                Costing
+                <md-icon ng-show="showing !=13" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==13" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 13">
+                <md-list-item>
+                    <p>Power Backup Charges</p>
+                    <span class="md-secondary">{{projectObject.costing.powerBackupCharges}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Maintenance Charges Fixed</p>
+                    <span class="md-secondary">{{projectObject.costing.maintenanceChargesFixed}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Maintenance Charges Variable</p>
+                    <span class="md-secondary">{{projectObject.costing.maintenanceChargesVariable}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Move In Charges</p>
+                    <span class="md-secondary">{{projectObject.costing.moveInCharges}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Move Out Charges</p>
+                    <span class="md-secondary">{{projectObject.costing.moveOutCharges}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Cooking Charges One Meal</p>
+                    <span class="md-secondary">{{projectObject.costing.cookingChargesOneMeal}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Cooking Charges Two Meals</p>
+                    <span class="md-secondary">{{projectObject.costing.cookingChargesTwoMeals}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Cleaning Utensils One Time</p>
+                    <span class="md-secondary">{{projectObject.costing.cleaningUtensilsOneTime}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Cleaning Utensils Two Time</p>
+                    <span class="md-secondary">{{projectObject.costing.cleaningUtensilsTwoTime}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Maid 12 Hours</p>
+                    <span class="md-secondary">{{projectObject.costing.maid12Hours}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Maid 24 Hours</p>
+                    <span class="md-secondary">{{projectObject.costing.maid24Hours}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Car Wash Charges</p>
+                    <span class="md-secondary">{{projectObject.costing.carWashCharges}}</span>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(14)" >
+                Other
+                <md-icon ng-show="showing !=14" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==14" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 14">
+                <md-list-item>
+                    <p>Power Backup</p>
+                    <span class="md-secondary">{{projectObject.other.powerBackup}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Maintenance</p>
+                    <span class="md-secondary">{{projectObject.other.maintenance}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Waiting Lounge In Tower</p>
+                    <span class="md-secondary">{{projectObject.other.waitingLoungeInTower}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Air Conditioning In Waiting Lounge</p>
+                    <span class="md-secondary">{{projectObject.other.airConditioningInWaitingLounge}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Pet Friendly</p>
+                    <span class="md-secondary">{{projectObject.other.petFriendly}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Wheelchair Friendly</p>
+                    <span class="md-secondary">{{projectObject.other.wheelchairFriendly}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Play School</p>
+                    <span class="md-secondary">{{projectObject.other.playSchool}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Daycare</p>
+                    <span class="md-secondary">{{projectObject.other.daycare}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>ATM</p>
+                    <span class="md-secondary">{{projectObject.other.atm}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Grocery</p>
+                    <span class="md-secondary">{{projectObject.other.grocery}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Pharmacy</p>
+                    <span class="md-secondary">{{projectObject.other.pharmacy}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Parlour</p>
+                    <span class="md-secondary">{{projectObject.other.parlour}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Park</p>
+                    <span class="md-secondary">{{projectObject.other.park}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Laundry</p>
+                    <span class="md-secondary">{{projectObject.other.laundry}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Bank</p>
+                    <span class="md-secondary">{{projectObject.other.bank}}</span>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(15)" >
+                Security
+                <md-icon ng-show="showing !=15" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==15" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 15">
+                <md-subheader class="md-no-sticky" >Main Gate</md-subheader>
+                <md-list-item>
+                    <p>Guards</p>
+                    <span class="md-secondary">{{projectObject.security.guards}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Boom Barriers</p>
+                    <span class="md-secondary">{{projectObject.security.boomBarriers}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Intercom</p>
+                    <span class="md-secondary">{{projectObject.security.intercom}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>CCTV</p>
+                    <span class="md-secondary">{{projectObject.security.cctv}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >Tower</md-subheader>
+                <md-list-item>
+                    <p>Access Controlled</p>
+                    <span class="md-secondary">{{projectObject.security.accessControlled}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Guard</p>
+                    <span class="md-secondary">{{projectObject.security.guard}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>CCTV</p>
+                    <span class="md-secondary">{{projectObject.security.cctv}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >Others</md-subheader>
+                <md-list-item>
+                    <p>Tags For Vehicles</p>
+                    <span class="md-secondary">{{projectObject.security.tagsForVehicles}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Stickers For Vehicles</p>
+                    <span class="md-secondary">{{projectObject.security.stickersForVehicles}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Number Of Entry Or Exit Points</p>
+                    <span class="md-secondary">{{projectObject.security.numberOfEntryOrExitPoints}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Video Door Phone</p>
+                    <span class="md-secondary">{{projectObject.security.videoDoorPhone}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Worker Clearance</p>
+                    <span class="md-secondary">{{projectObject.security.workerClearance}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Worker Pass</p>
+                    <span class="md-secondary">{{projectObject.security.workerPass}}</span>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(16)" >
+                Society Shops
+                <md-icon ng-show="showing !=16" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==16" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 16">
+                <md-subheader class="md-no-sticky" >Grocery</md-subheader>
+                <md-list-item ng-repeat="g in projectObject.societyShops.grocery">
+                    <p>Name:{{g.name}}</p>
+                    <span class="md-secondary">Contact:{{g.contact}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >Pharmacy</md-subheader>
+                <md-list-item ng-repeat="prmcy in projectObject.societyShops.pharmacy">
+                    <p>Name:{{prmcy.name}}</p>
+                    <span class="md-secondary">Contact:{{prmcy.contact}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >Parlour</md-subheader>
+                <md-list-item ng-repeat="prlr in projectObject.societyShops.parlour">
+                    <p>Name:{{prlr.name}}</p>
+                    <span class="md-secondary">Contact:{{prlr.contact}}</span>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(17)" >
+                Home Delivery
+                <md-icon ng-show="showing !=17" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==17" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 17">
+                <md-subheader class="md-no-sticky" >Restaurant</md-subheader>
+                <md-list-item ng-repeat="rstrnt in projectObject.homeDelivery.restaurant">
+                    <p>Name:{{rstrnt.name}}</p>
+                    <span class="md-secondary">Contact:{{rstrnt.contact}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >Grocery</md-subheader>
+                <md-list-item ng-repeat="grcry in projectObject.homeDelivery.grocery">
+                    <p>Name:{{grcry.name}}</p>
+                    <span class="md-secondary">Contact:{{grcry.contact}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >Pharmacy</md-subheader>
+                <md-list-item ng-repeat="prmcy in projectObject.homeDelivery.pharmacy">
+                    <p>Name:{{prmcy.name}}</p>
+                    <span class="md-secondary">Contact:{{prmcy.contact}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >Cable Provider</md-subheader>
+                <md-list-item ng-repeat="cblPrvdr in projectObject.homeDelivery.cableProvider">
+                    <p>Name:{{cblPrvdr.name}}</p>
+                    <span class="md-secondary">Contact:{{cblPrvdr.contact}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >ISP</md-subheader>
+                <md-list-item ng-repeat="isp in projectObject.homeDelivery.isp">
+                    <p>Name:{{isp.name}}</p>
+                    <span class="md-secondary">Contact:{{isp.contact}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >Parlour</md-subheader>
+                <md-list-item ng-repeat="prlr in projectObject.homeDelivery.parlour">
+                    <p>Name:{{prlr.name}}</p>
+                    <span class="md-secondary">Contact:{{prlr.contact}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >Milkman</md-subheader>
+                <md-list-item ng-repeat="mlkmn in projectObject.homeDelivery.milkman">
+                    <p>Name:{{mlkmn.name}}</p>
+                    <span class="md-secondary">Contact:{{mlkmn.contact}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >Laundry</md-subheader>
+                <md-list-item ng-repeat="lndry in projectObject.homeDelivery.laundry">
+                    <p>Name:{{lndry.name}}</p>
+                    <span class="md-secondary">Contact:{{lndry.contact}}</span>
+                </md-list-item>
+                <md-subheader class="md-no-sticky" >Newspaper Delivery</md-subheader>
+                <md-list-item ng-repeat="nwspprDlvry in projectObject.homeDelivery.newspaperDelivery">
+                    <p>Name:{{nwspprDlvry.name}}</p>
+                    <span class="md-secondary">Contact:{{nwspprDlvry.contact}}</span>
+                </md-list-item>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(18)" >
+                Units
+                <md-icon ng-show="showing !=18" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==18" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list 
+                ng-show="showing == 18"
+                ng-repeat="unit in projectObject.units">
+                <md-subheader 
+                    class="md-no-sticky" 
+                    ng-click="setShowing($index+1)">
+                    Unit {{$index+1}}
+                    <md-icon ng-show="secShowing != {{$index+1}}" class="subheader-icon">add</md-icon>
+                    <md-icon ng-show="secShowing == {{$index+1}}" class="subheader-icon">remove</md-icon>
+                </md-subheader>
+                <md-list ng-show="secShowing == {{$index+1}}">
+                    <md-subheader class="md-no-sticky" >Configurations</md-subheader>
+                    <md-list>
+                        <md-list-item>
+                            <p>Property Type</p>
+                            <span class="md-secondary">{{unit.configurations.propertyType}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Type</p>
+                            <span class="md-secondary">{{unit.configurations.type}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Price</p>
+                            <span class="md-secondary">{{unit.configurations.price}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Super Area</p>
+                            <span class="md-secondary">{{unit.configurations.superArea}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Carpet Area</p>
+                            <span class="md-secondary">{{unit.configurations.carpetArea}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Total Balconies</p>
+                            <span class="md-secondary">{{unit.configurations.totalBalconies}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Kitchen</p>
+                            <span class="md-secondary">{{unit.configurations.kitchen}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Puja Room</p>
+                            <span class="md-secondary">{{unit.configurations.pujaRoom}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Store Room</p>
+                            <span class="md-secondary">{{unit.configurations.storeRoom}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Total Halls</p>
+                            <span class="md-secondary">{{unit.configurations.totalHalls}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Study Room</p>
+                            <span class="md-secondary">{{unit.configurations.studyRoom}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Family Lounge</p>
+                            <span class="md-secondary">{{unit.configurations.familyLounge}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Total Bedrooms</p>
+                            <span class="md-secondary">{{unit.configurations.totalBedrooms}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Total Washrooms</p>
+                            <span class="md-secondary">{{unit.configurations.totalWashrooms}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Servant Room</p>
+                            <span class="md-secondary">{{unit.configurations.servantRoom}}</span>
+                        </md-list-item>
+                    </md-list>
+                    <md-subheader class="md-no-sticky" >Specifications</md-subheader>
+                    <md-list>
+                        <md-list-item>
+                            <p>Shower Cubicle</p>
+                            <span class="md-secondary">{{unit.specifications.showerCubicle}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Home Automation</p>
+                            <span class="md-secondary">{{unit.specifications.homeAutomation}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>VRV Air Conditioning</p>
+                            <span class="md-secondary">{{unit.specifications.vrvAirConditioning}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Kitchen Appliances</p>
+                            <span class="md-secondary">{{unit.specifications.kichenAppliances}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Kitchen OTG</p>
+                            <span class="md-secondary">{{unit.specifications.kitchenOTG}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Bath Tub</p>
+                            <span class="md-secondary">{{unit.specifications.bathTub}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Kitchen Modular</p>
+                            <span class="md-secondary">{{unit.specifications.kitchenModular}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Kitchen Dish Washer</p>
+                            <span class="md-secondary">{{unit.specifications.kitchenDishWasher}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>AirConditioning</p>
+                            <span class="md-secondary">{{unit.specifications.airConditioning}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Flooring Master Bedrooms</p>
+                            <span class="md-secondary">{{unit.specifications.flooringMasterBedrooms}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Kitchen Chimney</p>
+                            <span class="md-secondary">{{unit.specifications.kitchenChimney}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Flooring Living Dining</p>
+                            <span class="md-secondary">{{unit.specifications.flooringLivingDining}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Kitchen Microwave Oven</p>
+                            <span class="md-secondary">{{unit.specifications.kitchenMicrowaveOven}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Jacuzzi</p>
+                            <span class="md-secondary">{{unit.specifications.jacuzzi}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Kitchen Refrigerator</p>
+                            <span class="md-secondary">{{unit.specifications.kitchenRefrigerator}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Flooring Other Bedrooms</p>
+                            <span class="md-secondary">{{unit.specifications.flooringOtherBedrooms}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Kitchen HOB</p>
+                            <span class="md-secondary">{{unit.specifications.kitchenHob}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Fully Furnished</p>
+                            <span class="md-secondary">{{unit.specifications.fullyFurnished}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p>Wardrobes</p>
+                            <span class="md-secondary">{{unit.specifications.wardrobes}}</span>
+                        </md-list-item>
+                    </md-list>
+                </md-list>
+            </md-list>
+            <md-subheader class="md-no-sticky" ng-click="show(19)" >
+                Connectivity
+                <md-icon ng-show="showing !=19" class="subheader-icon">add</md-icon>
+                <md-icon ng-show="showing ==19" class="subheader-icon">remove</md-icon>
+            </md-subheader>
+            <md-list ng-show="showing == 19">
+                <md-list-item>
+                    <p>Airport</p>
+                    <span class="md-secondary">Distance {{projectObject.connectivity.airport.distance}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Cab Stand</p>
+                    <span class="md-secondary">Distance {{projectObject.connectivity.cabStand.distance}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Auto Stand</p>
+                    <span class="md-secondary">Distance {{projectObject.connectivity.autoStand.distance}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Metro Station</p>
+                    <span class="md-secondary">Distance {{projectObject.connectivity.metroStation.distance}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Railway Station</p>
+                    <span class="md-secondary">Distance {{projectObject.connectivity.railwayStation.distance}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Bus Stand</p>
+                    <span class="md-secondary">Distance {{projectObject.connectivity.busStand.distance}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Nearest Main Road</p>
+                    <span class="md-secondary">Distance {{projectObject.connectivity.nearestMainRoad}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Main Road Distance</p>
+                    <span class="md-secondary">Distance {{projectObject.connectivity.mainRoadDistance}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Nearest Expressway</p>
+                    <span class="md-secondary">Distance {{projectObject.connectivity.nearestExpressway}}</span>
+                </md-list-item>
+                <md-list-item>
+                    <p>Expressway Distance</p>
+                    <span class="md-secondary">Distance {{projectObject.connectivity.expresswayDistance}}</span>
+                </md-list-item>
+            </md-list>
+        </section>
+    </md-content>
+</form>

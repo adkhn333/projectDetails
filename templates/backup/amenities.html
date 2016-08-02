@@ -1,0 +1,176 @@
+<form ng-submit="applyAmenitiesFilter(amenities)">
+    <md-list layout="column">
+        <md-list-item>
+            <p>Multi Purpose Hall</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.multiPurposeHall"
+                ng-init="amenities.multiPurposeHall = amenitiesValue.multiPurposeHall"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Restaurant</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.restaurant"
+                ng-init="amenities.restaurant = amenitiesValue.restaurant"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Yoga Room</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.yogaRoom"
+                ng-init="amenities.yogaRoom = amenitiesValue.yogaRoom"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Aerobics Rooms</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.aerobicsRooms"
+                ng-init="amenities.aerobicsRooms = amenitiesValue.aerobicsRooms"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Dance Room</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.danceRoom"
+                ng-init="amenities.danceRoom = amenitiesValue.danceRoom"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Music Room</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.musicRoom"
+                ng-init="amenities.musicRoom = amenitiesValue.musicRoom"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Salon</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.salon"
+                ng-init="amenities.salon = amenitiesValue.salon"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Spa</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.spa"
+                ng-init="amenities.spa = amenitiesValue.spa"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Gym</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.gym"
+                ng-init="amenities.gym = amenitiesValue.gym"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Video Games</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.videoGames"
+                ng-init="amenities.videoGames = amenitiesValue.videoGames"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Mini Theatre</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.minitheatre"
+                ng-init="amenities.minitheatre = amenitiesValue.minitheatre"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Kids Zone</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.kidsZone"
+                ng-init="amenities.kidsZone = amenitiesValue.kidsZone"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Bar</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.bar"
+                ng-init="amenities.bar = amenitiesValue.bar"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Cafe</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.cafe"
+                ng-init="amenities.cafe = amenitiesValue.cafe"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Business Centre</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.businessCentre"
+                ng-init="amenities.businessCentre = amenitiesValue.businessCentre"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Guest Rooms</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.guestRooms"
+                ng-init="amenities.guestRooms = amenitiesValue.guestRooms"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Steam Room</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.steamRoom"
+                ng-init="amenities.steamRoom = amenitiesValue.steamRoom"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Sauna Room</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.saunaRoom"
+                ng-init="amenities.saunaRoom = amenitiesValue.saunaRoom"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Jacuzzi</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="amenities.jacuzzi"
+                ng-init="amenities.jacuzzi = amenitiesValue.jacuzzi"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-button layout-align="center center" type="submit" class="md-raised md-primary">Apply</md-button>
+    </md-list>
+</form>

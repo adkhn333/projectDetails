@@ -1,0 +1,77 @@
+<form ng-submit="applyNearbyFilter(nearby)">
+    <md-list layout="column">
+        <md-list-item>
+            <md-input-container class="md-block" flex layout-padding>
+                <label>Search Area</label>
+                <input type="text" name="name" ng-model="nearby.area">
+            </md-input-container>
+        </md-list-item>
+        <md-list-item>
+            <md-input-container class="md-block" flex layout-padding>
+                <label>Distance</label>
+                <input type="text" name="name" ng-model="nearby.distance">
+            </md-input-container>
+        </md-list-item>
+        <md-list-item>
+            <md-input-container class="md-block" flex layout-padding>
+                <label>Time</label>
+                <input type="text" name="name" ng-model="nearby.time">
+            </md-input-container>
+        </md-list-item>
+        <md-list-item>
+            <p>Airport</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="nearby.airport"
+                ng-init="nearby.airport = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Cab Stand</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="nearby.cabStand"
+                ng-init="nearby.cabStand = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Auto Stand</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="nearby.autoStand"
+                ng-init="nearby.autoStand = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Bus Stand</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="nearby.busStand"
+                ng-init="nearby.busStand = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Metro Station</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="nearby.metroStation"
+                ng-init="nearby.metroStation = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Railway Station</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="nearby.railwayStation"
+                ng-init="nearby.railwayStation = null"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-button layout-align="center center" type="submit" class="md-raised md-primary">Apply</md-button>
+    </md-list>
+</form>

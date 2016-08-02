@@ -1,0 +1,9 @@
+<form layout="column" layout-padding ng-submit="applyTopFilter(top)">
+    <md-input-container>
+        <label>Select Range</label>
+        <md-select ng-model="top.top" ng-init="top.top = null">
+            <md-option ng-repeat="range in ranges" ng-value="range">{{range}}</md-option>
+        </md-select>
+    </md-input-container>
+    <md-button type="submit" class="md-raised md-primary">Apply</md-button>
+</form>

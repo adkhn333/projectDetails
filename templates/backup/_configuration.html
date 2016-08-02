@@ -1,0 +1,86 @@
+<form layout="column" layout-padding ng-submit="applyConfigurationFilter(configuration)" class="formFilters">
+	<div>
+	    <p> Show Project Type :</p>
+	    <md-checkbox layout="row"
+			ng-false-value="null"
+	         ng-init="configuration.projectType.apartment=null"
+	          ng-model="configuration.projectType.apartment" >
+	          Apartment
+	     </md-checkbox>
+	    <md-checkbox layout="row" 
+			ng-false-value="null"
+	        ng-init="configuration.projectType.villa=null" 
+	        ng-model="configuration.projectType.villa" >
+	        Villa
+	    </md-checkbox>
+	    <md-checkbox layout="row" 
+			ng-false-value="null"
+	        ng-init="configuration.projectType.rowHouse=null" 
+	        ng-model="configuration.projectType.rowHouse" >
+	        Row House
+	    </md-checkbox>
+	    <md-checkbox layout="row" 
+			ng-false-value="null"
+	        ng-init="configuration.projectType.servicedApartment=null" 
+	        ng-model="configuration.projectType.serviceAprtment" >
+	        Serviced Apartment
+	    </md-checkbox>
+	    <md-checkbox layout="row" 
+			ng-false-value="null"
+	        ng-init="configuration.projectType.studio=null" 
+	        ng-model="configuration.projectType.studio" >
+	        Studio
+	    </md-checkbox>
+	</div>
+	<div>
+		<p  > Show Project Type (BHK):</p>
+		<md-checkbox 
+			ng-false-value="null"
+	        ng-init="configuration.projectBHK.BHK1=null"
+	        ng-model="configuration.projectBHK.BHK1" >
+	          1 BHK
+	    </md-checkbox>
+	    <md-checkbox 
+			ng-false-value="null"
+	        ng-init="configuration.projectBHK.BHK2=null"
+	        ng-model="configuration.projectBHK.BHK2" >
+	          2 BHK
+	    </md-checkbox>
+	    <md-checkbox 
+			ng-false-value="null"
+	        ng-init="configuration.projectBHK.BHK3=null"
+	        ng-model="configuration.projectBHK.BHK3" >
+	          3 BHK
+	    </md-checkbox>
+	    <md-checkbox 
+			ng-false-value="null"
+	        ng-init="configuration.projectBHK.BHK4=null"
+	        ng-model="configuration.projectBHK.BHK4" >
+	          4 BHK
+	    </md-checkbox>
+	    <md-checkbox 
+			ng-false-value="null"
+	        ng-init="configuration.projectBHK.BHK5=null"
+	        ng-model="configuration.projectBHK.BHK5" >
+	          5 BHK
+	    </md-checkbox>
+	</div>
+	<div>
+		<p>Show Project (Cost):</p>
+		<md-input-container>
+			<input type="number" 
+			ng-model="configuration.cost.min" 
+			ng-init="configuration.cost.min=null" 
+			class="md-primary" 
+			placeholder="Minimum">
+		</md-input-container>
+		<md-input-container>
+			<input type="number" 
+			ng-model="configuration.cost.max" 
+			ng-init="configuration.cost.max=null" 
+			class="md-primary" 
+			placeholder="Maximum">
+		</md-input-container>
+	</div>
+    <md-button type="submit" class="md-raised md-primary">Apply</md-button>
+</form>

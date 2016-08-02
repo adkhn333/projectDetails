@@ -1,0 +1,366 @@
+{
+  "projectDetails": {
+    "projectName": "asd",
+    "builderName": "asd",
+    "builderId": "asd",
+    "address": {
+      "cityName": "asd",
+      "cityId":"asd",
+      "locations": {
+        "locationId": {
+          "locationName":"asd" ,
+          "locationId": "asd"
+        }
+      },
+      "address_line1": "asd",
+      "address_line2": "asd",
+      "zone": "asd",
+      "zoneId": "asd",
+      "pincode": "asd",
+      "landmark": "asd",
+      "lat": "asd",
+      "lng": "asd"
+    },
+    "partners": {
+      "constructionCompany": {
+        "name": "asd",
+        "website": "asd"
+      },
+      "architect": {
+        "name": "asd",
+        "website": "asd"
+      },
+      "landscapeDesigner": {
+        "name": "asd",
+        "website": "asd"
+      }
+    },
+    "approvedBankLoans": {
+      "AxisBank": "asd",
+      "HDFC": "asd"
+    },
+    "projectType": {
+      "apartment": "asd",
+      "villa": "asd",
+      "rowHouse": "asd",
+      "studio": "asd",
+      "servicedApartment": "asd"
+    },
+    "totalUnits": "asd",
+    "totalTowers": "asd",
+    "greenArea": "asd",
+    "landArea": "asd",
+    "floors": {
+      "max": "asd",
+      "min": "asd"
+    },
+    "lifts": {
+      "max": "asd",
+      "min": "asd"
+    },
+    "carParking": "asd",
+    "visitorCarParking": "asd",
+    "vastuCompliant": "asd"
+  },
+  "rwa": {
+    "contactName": "asd",
+    "emailAddress": "asd",
+    "contactNumber": "asd",
+    "rules": "asd"
+  },
+  "sportsActivities": {
+    "cricket": "asd",
+    "football": "asd",
+    "tennis": "asd",
+    "basketball": "asd",
+    "multiPurposeCourt": "asd",
+    "pitchAndPutt": "asd",
+    "skatingRink": "asd",
+    "volleyball": "asd",
+    "amphitheatre": "asd",
+    "badminton": "asd",
+    "tableTennis": "asd",
+    "squash": "asd",
+    "swimmingPool": "asd",
+    "kidsSwimmingPool": "asd",
+    "kidsPlayAreas": "asd",
+    "poolTable": "asd",
+    "snookerTable": "asd",
+    "bowlingAlley": "asd",
+    "joggingTrack": "asd"
+  },
+  "clubHouse": {
+    "operatingTimes": {
+      "start": "asd",
+      "end": "asd",
+      "holiday": "asd"
+    },
+    "multiPurposeHall": "asd",
+    "restaurant": "asd",
+    "yogaRoom": "asd",
+    "aerobicsRooms": "asd",
+    "danceRoom": "asd",
+    "musicRoom": "asd",
+    "salon": "asd",
+    "spa": "asd",
+    "gym": "asd",
+    "videoGames": "asd",
+    "miniTheatre": "asd",
+    "kidsZone": "asd",
+    "bar": "asd",
+    "cafe": "asd",
+    "businessCentre": "asd",
+    "guestrooms": "asd",
+    "steamRoom": "asd",
+    "saunaRoom": "asd",
+    "jacuzzi": "asd"
+  },
+  "costing": {
+    "powerBackupCharges": "asd",
+    "maintenanceChargesFixed": "asd",
+    "maintenanceChargesVariable": "asd",
+    "moveInCharges": "asd",
+    "moveOutCharges": "asd",
+    "cookingChargeOneMeal": "asd",
+    "cookingChargeTwoMeals": "asd",
+    "cleaningUtensilsOneTime": "asd",
+    "cleaningUtensilsTwoTime": "asd",
+    "maid12Hours": "asd",
+    "maid24Hours": "asd",
+    "carWashCharges": "asd"
+  },
+  "other": {
+    "powerBackup": "asd",
+    "maintenance": "asd",
+    "waitingLoungeInTower": "asd",
+    "airConditioningInWaitingLounge": "asd",
+    "petFriendly": "asd",
+    "wheelchairFriendly": "asd",
+    "playSchool": "asd",
+    "daycare": "asd",
+    "atm": "asd",
+    "grocery": "asd",
+    "pharmacy": "asd",
+    "parlour": "asd",
+    "park": "asd",
+    "laundry": "asd",
+    "bank": "asd"
+  },
+  "security": {
+    "mainGate": {
+      "guards": "asd",
+      "boomBarriers": "asd",
+      "intercom": "asd",
+      "cctv": "asd"
+    },
+    "tower": {
+      "accessControlled": "asd",
+      "guard": "asd",
+      "cctv": "asd"
+    },
+    "tagsForVehicles": "asd",
+    "stickersForVehicles": "asd",
+    "numberOfEntryOrExitPoints": "asd",
+    "videoDoorPhone": "asd",
+    "workerClearance": "asd",
+    "workerPass": "asd"
+  },
+  "societyShops": {
+    "grocery": {
+      "name": "asd",
+      "contact": "asd"
+    },
+    "pharmacy": {
+      "name": "asd",
+      "contact": "asd"
+    },
+    "parlour": {
+      "id1": {
+        "name": "asd",
+        "contact": "asd"
+      }
+    }
+  },
+  "homeDelivery": {
+    "restaurant": {
+      "id1": {
+        "name": "asd",
+        "contact": "asd"
+      }
+    },
+    "grocery": {
+      "id1": {
+        "name": "asd",
+        "contact": "asd"
+      }
+    },
+    "pharmacy": {
+      "id1": {
+        "name": "asd",
+        "contact": "asd"
+      }
+    },
+    "cableProvider": {
+      "id1": {
+        "name": "asd",
+        "contact": "asd"
+      }
+    },
+    "isp": {
+      "id1": {
+        "name": "asd",
+        "contact": "asd"
+      }
+    },
+    "parlour": {
+      "id1": {
+        "name": "asd",
+        "contact": "asd"
+      }
+    },
+    "milkman": {
+      "id1": {
+        "name": "asd",
+        "contact": "asd"
+      }
+    },
+    "laundry": {
+      "id1": {
+        "name": "asd",
+        "contact": "asd"
+      }
+    },
+    "newspaperDelivery": {
+      "id1": {
+        "name": "asd",
+        "contact": "asd"
+      }
+    }
+  },
+  "units": {
+    "id1": {
+      "configurations": {
+        "propertyType": "asd",
+        "type": "asd",
+        "price": "asd",
+        "superArea": "asd",
+        "carpetArea": "asd",
+        "totalBalconies": "asd",
+        "kitchen": "asd",
+        "pujaRoom": "asd",
+        "storeRoom": "asd",
+        "totalHalls": "asd",
+        "studyRoom": "asd",
+        "familyLounge": "asd",
+        "totalBedrooms": "asd",
+        "totalWashrooms": "asd",
+        "servantRoom": "asd"
+      },
+      "specifications": {
+        "showerCubicle": "asd",
+        "homeAutomation": "asd",
+        "vrvAirConditioning": "asd",
+        "kitchenAppliances": "asd",
+        "kitchenOTG": "asd",
+        "bathTub": "asd",
+        "kitchenModular": "asd",
+        "kitchenDishWasher": "asd",
+        "airConditioning": "asd",
+        "flooringMasterBedrooms": "asd",
+        "kitchenChimney": "asd",
+        "flooringLivingDining": "asd",
+        "kitchenMicrowaveOven": "asd",
+        "jacuzzi": "asd",
+        "kitchenRefrigerator": "asd",
+        "flooringOtherBedrooms": "asd",
+        "kitchenHob": "asd",
+        "fullyFurnished": "asd",
+        "wardrobes": "asd"
+      }
+    },
+    "id2": {
+      "configurations": {
+        "propertyType": "asd",
+        "type": "asd",
+        "price": "asd",
+        "superArea": "asd",
+        "carpetArea": "asd",
+        "totalBalconies": "asd",
+        "kitchen": "asd",
+        "pujaRoom": "asd",
+        "storeRoom": "asd",
+        "totalHalls": "asd",
+        "studyRoom": "asd",
+        "familyLounge": "asd",
+        "totalBedrooms": "asd",
+        "totalWashrooms": "asd",
+        "servantRoom": "asd"
+      },
+      "specifications": {
+        "showerCubicle": "asd",
+        "homeAutomation": "asd",
+        "vrvAirConditioning": "asd",
+        "kitchenAppliances": "asd",
+        "kitchenOTG": "asd",
+        "bathTub": "asd",
+        "kitchenModular": "asd",
+        "kitchenDishWasher": "asd",
+        "airConditioning": "asd",
+        "flooringMasterBedrooms": "asd",
+        "kitchenChimney": "asd",
+        "flooringLivingDining": "asd",
+        "kitchenMicrowaveOven": "asd",
+        "jacuzzi": "asd",
+        "kitchenRefrigerator": "asd",
+        "flooringOtherBedrooms": "asd",
+        "kitchenHob": "asd",
+        "fullyFurnished": "asd",
+        "wardrobes": "asd"
+      }
+    }
+  },
+  "connectivity": {
+    "airport": {
+      "lat": "asd",
+      "long": "asd",
+      "distance": "asd",
+      "peakTime": "asd",
+      "offpeakTime": "asd"
+    },
+    "cabStand": {
+      "lat": "asd",
+      "long": "asd",
+      "distance": "asd"
+    },
+    "autoStand": {
+      "lat": "asd",
+      "long": "asd",
+      "distance": "asd"
+    },
+    "metroStation": {
+      "lat": "asd",
+      "long": "asd",
+      "distance": "asd",
+      "peakTime": "asd",
+      "offpeakTime": "asd"
+    },
+    "railwayStation": {
+      "lat": "asd",
+      "long": "asd",
+      "distance": "asd",
+      "peakTime": "asd",
+      "offpeakTime": "asd"
+    },
+    "busStand": {
+      "lat": "asd",
+      "long": "asd",
+      "distance": "asd",
+      "peakTime": "asd",
+      "offpeakTime": "asd"
+    },
+    "nearestMainRoad": "asd",
+    "mainRoadDistance": "asd",
+    "nearestExpressway": "asd",
+    "expresswayDistance": "asd"
+  }
+}

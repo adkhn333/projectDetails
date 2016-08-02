@@ -1,0 +1,23 @@
+<form ng-submit="applyProjectStatusFilter(projectStatus)">
+    <md-list layout="column">
+        <md-list-item>
+            <p>Under Construction</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="projectStatus.underConstruction"
+                ng-init="projectStatus.underConstruction = projectStatusValue.underConstruction"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <p>Ready To Move</p>
+            <md-checkbox
+                ng-false-value="null"
+                ng-model="projectStatus.readyToMove"
+                ng-init="projectStatus.readyToMove = projectStatusValue.readyToMove"
+                class="md-secondary">
+            </md-checkbox>
+        </md-list-item>
+        <md-button layout-align="center center" type="submit" class="md-raised md-primary">Apply</md-button>
+    </md-list>
+</form>
